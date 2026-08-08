@@ -1,4 +1,5 @@
 // Element References
+const footer = document.querySelector("footer");
 
 // Function to dynamically add my name and student id to the document (taken from assignment 2 as it's the same code)
 function createFooter() {
