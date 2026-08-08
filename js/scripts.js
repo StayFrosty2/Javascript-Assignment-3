@@ -9,3 +9,6 @@ function createFooter() {
     p.textContent = `Page created by: ${studentName} | ${studentId}`;
     footer.appendChild(p);
 }
+
+// Call the create footer function
+createFooter();
