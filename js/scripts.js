@@ -8,7 +8,7 @@ const search = document.querySelector("#search");
 const submitbtn = document.querySelector("#submitbtn");
 
 // Pokemon Stuff References
-const name = document.querySelector("#name");
+const pname = document.querySelector("#name");
 const sprite = document.querySelector("#sprite");
 const type1 = document.querySelector("#type1");
 const type2 = document.querySelector("#type2");
@@ -60,4 +60,21 @@ function fetchResults(event) {
 
 function displayResults(json) {
     console.log(json);
+    let id = json.id;
+    console.log(id);
+    console.log(json.name);
+    pname.textContent = `Pokedex #${id}: ${json.name.charAt(0).toUpperCase() + json.name.slice(1)}`;
+    sprite.src = json.sprites.front_default;
+    sprite.alt = `${json.name}`;
+
+    let typeOne = json.types[0].type.name;
+    type1.textContent = typeOne.charAt(0).toUpperCase() + typeOne.slice(1);
+
+    if(json.types.length > 1) {
+        let typeTwo = json.types[1].type.name;
+        type2.textContent = typeTwo.charAt(0).toUpperCase() + typeTwo.slice(1);
+    }
+    else {
+        type2.textContent = ``;
+    }
 }
