@@ -2,10 +2,17 @@
 const footer = document.querySelector("footer");
 
 // Pokemon Stuff References
-const p1 = document.querySelector("#p1");
-const p1t1 = document.querySelector("#p1t1");
-const p1t2 = document.querySelector("#p1t2");
-const btn1 = document.querySelector("#searchbtn1");
+const name = document.querySelector("#name");
+const sprite = document.querySelector("#sprite");
+const type1 = document.querySelector("#type1");
+const type2 = document.querySelector("#type2");
+const ability = document.querySelector("#ability");
+const hp = document.querySelector("#hp");
+const atk = document.querySelector("#atk");
+const def = document.querySelector("#def");
+const spatk = document.querySelector("#spatk");
+const spdef = document.querySelector("#spdef");
+const spd = document.querySelector("#spd");
 
 
 // Function to dynamically add my name and student id to the document (taken from assignment 2 as it's the same code)
