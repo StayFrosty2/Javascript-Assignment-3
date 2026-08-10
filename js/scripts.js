@@ -12,7 +12,8 @@ const pname = document.querySelector("#name");
 const sprite = document.querySelector("#sprite");
 const type1 = document.querySelector("#type1");
 const type2 = document.querySelector("#type2");
-const ability = document.querySelector("#ability");
+const cry = document.querySelector("#cry");
+const abilities = document.querySelector("#abilities");
 const hp = document.querySelector("#hp");
 const atk = document.querySelector("#atk");
 const def = document.querySelector("#def");
@@ -77,4 +78,6 @@ function displayResults(json) {
     else {
         type2.textContent = ``;
     }
+
+    cry.src = json.cries.latest;
 }
