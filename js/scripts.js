@@ -1,5 +1,7 @@
 // Element References
 const footer = document.querySelector("footer");
+const search = document.querySelector("#search");
+const submitbtn = document.querySelector("#submitbtn");
 
 // Pokemon Stuff References
 const name = document.querySelector("#name");
@@ -36,3 +38,5 @@ function createFooter() {
 
 // Call the create footer function
 createFooter();
+
+// event listener for the form, 
