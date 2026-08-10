@@ -64,16 +64,16 @@ function displayResults(json) {
     let id = json.id;
     console.log(id);
     console.log(json.name);
-    pname.textContent = `Pokedex #${id}: ${json.name.charAt(0).toUpperCase() + json.name.slice(1)}`;
+    pname.textContent = `Pokedex #${id}: ${json.name}`;
     sprite.src = json.sprites.front_default;
     sprite.alt = `${json.name}`;
 
     let typeOne = json.types[0].type.name;
-    type1.textContent = typeOne.charAt(0).toUpperCase() + typeOne.slice(1);
+    type1.textContent = typeOne;
 
     if(json.types.length > 1) {
         let typeTwo = json.types[1].type.name;
-        type2.textContent = typeTwo.charAt(0).toUpperCase() + typeTwo.slice(1);
+        type2.textContent = typeTwo;
     }
     else {
         type2.textContent = ``;
@@ -98,11 +98,16 @@ function displayResults(json) {
         if(json.abilities[i].is_hidden === true) {
             abiTxt += ` (Hidden Ability)`;
         }
-        ability.textContent = abiTxt.charAt(0).toUpperCase() + abiTxt.slice(1);
+        ability.textContent = abiTxt;
         abilityList.appendChild(ability);
     }
     
     abilities.appendChild(abilityList);
 
-    
+    hp.textContent = `Hp: ${json.stats[0].base_stat}`;
+    atk.textContent = `Attack: ${json.stats[1].base_stat}`;
+    def.textContent = `Defense: ${json.stats[2].base_stat}`;
+    spatk.textContent = `Special Attack: ${json.stats[3].base_stat}`;
+    spdef.textContent = `Special Defense: ${json.stats[4].base_stat}`;
+    spd.textContent = `Speed: ${json.stats[5].base_stat}`;
 }
