@@ -80,4 +80,29 @@ function displayResults(json) {
     }
 
     cry.src = json.cries.latest;
+
+    while(abilities.firstChild) {
+        abilities.removeChild(abilities.firstChild);
+    }
+
+    const abiH3 = document.createElement("h3");
+    abiH3.textContent = `List of Abilities:`;
+    abilities.appendChild(abiH3);
+
+    const abilityList = document.createElement("ul");
+
+    for(let i = 0; i < json.abilities.length; i++) {
+        const ability = document.createElement("li");
+        let abiTxt;
+        abiTxt = json.abilities[i].ability.name;
+        if(json.abilities[i].is_hidden === true) {
+            abiTxt += ` (Hidden Ability)`;
+        }
+        ability.textContent = abiTxt.charAt(0).toUpperCase() + abiTxt.slice(1);
+        abilityList.appendChild(ability);
+    }
+    
+    abilities.appendChild(abilityList);
+
+    
 }
