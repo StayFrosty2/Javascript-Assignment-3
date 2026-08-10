@@ -1,3 +1,7 @@
+// base url;
+const baseURL = "https://pokeapi.co/api/v2/";
+let url;
+
 // Element References
 const footer = document.querySelector("footer");
 const search = document.querySelector("#search");
@@ -39,4 +43,19 @@ function createFooter() {
 // Call the create footer function
 createFooter();
 
-// event listener for the form, 
+// event listener for the form to grab the submit
+submitbtn.addEventListener("click", function (event) {
+    fetchResults(event);
+});
+function fetchResults(event) {
+    // prevent default
+    event.preventDefault();
+
+    // assemble the url
+    url = `${baseURL}pokemon/ditto`;
+    fetch(url).then(response => {return response.json();}).then(json => displayResults(json));
+}
+
+function displayResults(json) {
+    console.log(json);
+}
