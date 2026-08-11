@@ -1,5 +1,31 @@
 @charset "UTF-8";
 
+html {
+    background-color: #dc0a2d;
+    border: black 3px solid;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#information {
+    background-color: white;
+    border: black 3px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+h2, h1 {
+    margin: 5 auto;
+}
+
+img, audio {
+    margin: 5 auto;
+}
+
 #type1, #type2, li, h2 {
     text-transform: capitalize;
 }
